@@ -191,6 +191,7 @@ export const usePanoramicStore = (pinia?: any) => {
 const filterEmptySceneGroupMethod = (data: PanoranaxVO[]): PanoranaxVO[] => {
   return data
     .map((item) => {
+      //浅拷贝当前对象，避免污染原始数据
       const node = { ...item }
 
       if (node.sceneGroupList && node.sceneGroupList.length > 0) {
